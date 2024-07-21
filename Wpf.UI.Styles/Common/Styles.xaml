@@ -1,0 +1,17 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:controls="clr-namespace:Wpf.UI.Controls;assembly=Wpf.UI.Controls"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Colors.xaml"/>
+
+        <!--Import templates-->
+        <ResourceDictionary Source="Templates.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Wpf.UI.Controls;component/DefaultTemplates.xaml"/>
+
+        <!--Import controls styles-->
+        <ResourceDictionary Source="ControlStyles/ButtonStyles.xaml"/>
+        <ResourceDictionary Source="ControlStyles/IconStyles.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>
