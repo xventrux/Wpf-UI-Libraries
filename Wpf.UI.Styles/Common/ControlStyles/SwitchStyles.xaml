@@ -1,0 +1,82 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:controls="clr-namespace:Wpf.UI.Controls;assembly=Wpf.UI.Controls"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--Switch triggers-->
+
+    <Trigger x:Key="SwitchMouseOverTrigger" Property="CheckBox.IsMouseOver" Value="True">
+        <Setter Property="controls:Switch.Background" Value="{DynamicResource Gray50Brush}"/>
+    </Trigger>
+
+    <Trigger x:Key="SwitchMouseCapturedTrigger" Property="Button.IsMouseCaptured" Value="True">
+        <Setter Property="Button.Background" Value="{DynamicResource Gray200Brush}"/>
+        <Setter Property="Button.BorderBrush" Value="{DynamicResource Gray400Brush}"/>
+    </Trigger>
+
+    <Trigger x:Key="SwitchIsEnabledTrigger" Property="Button.IsEnabled" Value="False">
+        <Setter Property="Button.Background" Value="{DynamicResource Gray100Brush}"/>
+        <Setter Property="Button.Foreground" Value="{DynamicResource Gray600Brush}"/>
+    </Trigger>
+
+    <!--Default switch styles-->
+    
+    <Style x:Key="DefaultSwitchStyle" TargetType="{x:Type controls:Switch}">
+        <Setter Property="Fill" Value="{DynamicResource Gray100Brush}"/>
+        <Setter Property="EllipseHeight" Value="10"/>
+        <Setter Property="Padding" Value="15, 7"/>
+        <Setter Property="Template" Value="{DynamicResource DefaultSwitchTemplate}"/>
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Fill" Value="White"/>
+            </Trigger>
+            <StaticResource ResourceKey="SwitchMouseOverTrigger"/>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="RoundedSwitchStyle" TargetType="{x:Type controls:Switch}" BasedOn="{StaticResource DefaultSwitchStyle}">
+        <Setter Property="Template" Value="{DynamicResource DefaultRoundedSwitchTemplate}"/>
+    </Style>
+
+    <!--Primary switch styles-->
+
+    <Style x:Key="PrimarySwitchStyle" TargetType="{x:Type controls:Switch}" BasedOn="{StaticResource DefaultSwitchStyle}">
+        <Setter Property="Fill" Value="{DynamicResource Gray100Brush}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="EllipseHeight" Value="12"/>
+        <Setter Property="Padding" Value="15, 7"/>
+        <Setter Property="Template" Value="{DynamicResource DefaultSwitchTemplate}"/>
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Fill" Value="{DynamicResource PrimaryBrush}"/>
+            </Trigger>
+            <StaticResource ResourceKey="SwitchMouseOverTrigger"/>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="PrimaryRoundedSwitchStyle" TargetType="{x:Type controls:Switch}" BasedOn="{StaticResource PrimarySwitchStyle}">
+        <Setter Property="Template" Value="{DynamicResource DefaultRoundedSwitchTemplate}"/>
+    </Style>
+
+    <!--Danger switch styles-->
+
+    <Style x:Key="DangerSwitchStyle" TargetType="{x:Type controls:Switch}" BasedOn="{StaticResource DefaultSwitchStyle}">
+        <Setter Property="Fill" Value="{DynamicResource Gray100Brush}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="EllipseHeight" Value="12"/>
+        <Setter Property="Template" Value="{DynamicResource DefaultSwitchTemplate}"/>
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Fill" Value="{DynamicResource DangerBrush}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="DangerRoundedSwitchStyle" TargetType="{x:Type controls:Switch}" BasedOn="{StaticResource DangerSwitchStyle}">
+        <Setter Property="Template" Value="{DynamicResource DefaultRoundedSwitchTemplate}"/>
+    </Style>
+
+    <!--Default styles-->
+    
+    <Style TargetType="{x:Type controls:Switch}" BasedOn="{StaticResource DefaultSwitchStyle}"/>
+
+</ResourceDictionary>

@@ -12,6 +12,7 @@
         <!--Import controls styles-->
         <ResourceDictionary Source="ControlStyles/ButtonStyles.xaml"/>
         <ResourceDictionary Source="ControlStyles/IconStyles.xaml"/>
+        <ResourceDictionary Source="ControlStyles/SwitchStyles.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>

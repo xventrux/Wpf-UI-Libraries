@@ -8,6 +8,7 @@
         xmlns:icons="clr-namespace:Wpf.UI.Controls.Icons;assembly=Wpf.UI.Controls"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+
     <Border Padding="10">
         <controls:SpacingStackPanel ItemSpacing="5">
             
@@ -21,14 +22,14 @@
             </controls:SpacingStackPanel>
             
             <TextBlock Text="Переключатель" FontWeight="Medium"/>
-            <controls:Switch OffText="Выкл" OnText="Вкл" Content="Я переключатель" HorizontalAlignment="Left"/>
-            <controls:Switch OffText="Выкл" IsEnabled="False" OnText="Вкл" Content="Я переключатель" HorizontalAlignment="Left"/>
+            <controls:Switch OffIcon="{x:Static icons:Icons.PowerOff}" OnIcon="{x:Static icons:Icons.PowerOn}" Content="Я переключатель" HorizontalAlignment="Left" Style="{DynamicResource PrimaryRoundedSwitchStyle}"/>
+            <controls:Switch OffText="Выкл" OnText="Вкл" Content="Я переключатель" Style="{DynamicResource DangerRoundedSwitchStyle}"  HorizontalAlignment="Left"/>
 
             <TextBlock Text="Кнопки с иконкой" FontWeight="Medium"/>
             <controls:SpacingStackPanel Orientation="Horizontal" ItemSpacing="5">
                 <controls:IconButton Icon="{x:Static icons:Icons.Home}" HorizontalAlignment="Left" Content="Главная"/>
                 <controls:IconButton Icon="{x:Static icons:Icons.Home}" HorizontalAlignment="Left" Content="Главная" IsEnabled="False"/>
-                <controls:IconButton Icon="{x:Static icons:Icons.Home}" HorizontalAlignment="Left" Content="Главная" Style="{DynamicResource DangerIconButtonStyle}"/>
+                <controls:IconButton Icon="{x:Static icons:Icons.Home}" HorizontalAlignment="Left" Content="Главная" Style="{DynamicResource PrimaryIconButtonStyle}"/>
                 <controls:IconButton Icon="{x:Static icons:Icons.Home}" HorizontalAlignment="Left" Content="Главная" Style="{DynamicResource DangerIconButtonStyle}"/>
                 <controls:IconButton Icon="{x:Static icons:Icons.Home}" HorizontalAlignment="Left" Content="Главная" Style="{DynamicResource DangerRoundedIconButtonStyle}"/>
             </controls:SpacingStackPanel>
@@ -42,7 +43,6 @@
                 <Button HorizontalAlignment="Left" Content="Click me" Style="{DynamicResource DangerRoundedButtonStyle}"/>
                 <Button HorizontalAlignment="Left" Content="Click me" Style="{DynamicResource DangerRoundedButtonStyle}" IsEnabled="False"/>
             </controls:SpacingStackPanel>
-
         </controls:SpacingStackPanel>
     </Border>
 </Window>

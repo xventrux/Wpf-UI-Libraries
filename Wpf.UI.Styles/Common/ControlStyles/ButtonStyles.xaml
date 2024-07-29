@@ -3,10 +3,10 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <!--Default button triggers-->
+    
     <Trigger x:Key="DefaultButtonMouseOverTrigger" Property="Button.IsMouseOver" Value="True">
         <Setter Property="Button.Background" Value="{DynamicResource Gray100Brush}"/>
         <Setter Property="Button.BorderBrush" Value="{DynamicResource Gray300Brush}"/>
-        <Setter Property="Button.Cursor" Value="Hand"/>
     </Trigger>
 
     <Trigger x:Key="DefaultButtonMouseCapturedTrigger" Property="Button.IsMouseCaptured" Value="True">
@@ -20,9 +20,9 @@
     </Trigger>
 
     <!--Primary button triggers-->
+    
     <Trigger x:Key="PrimaryButtonMouseOverTrigger" Property="Button.IsMouseOver" Value="True">
         <Setter Property="Button.Background" Value="{DynamicResource PrimaryBrush2}"/>
-        <Setter Property="Button.Cursor" Value="Hand"/>
     </Trigger>
 
     <Trigger x:Key="PrimaryButtonMouseCapturedTrigger" Property="Button.IsMouseCaptured" Value="True">
@@ -35,9 +35,9 @@
     </Trigger>
 
     <!--Danger button triggers-->
+    
     <Trigger x:Key="DangerButtonMouseOverTrigger" Property="Button.IsMouseOver" Value="True">
         <Setter Property="Button.Background" Value="{DynamicResource DangerBrush2}"/>
-        <Setter Property="Button.Cursor" Value="Hand"/>
     </Trigger>
 
     <Trigger x:Key="DangerButtonMouseCapturedTrigger" Property="Button.IsMouseCaptured" Value="True">
@@ -46,11 +46,12 @@
 
     <Trigger x:Key="DangerButtonIsEnabledTrigger" Property="Button.IsEnabled" Value="False">
         <Setter Property="Button.Background" Value="{DynamicResource DangerBrushLight}"/>
-        <Setter Property="Button.Foreground" Value="{DynamicResource Gray500Brush}"/>
+        <Setter Property="Button.Foreground" Value="{DynamicResource DangerBrush3}"/>
     </Trigger>
 
 
     <!--Default button styles-->
+    
     <Style x:Key="DefaultButtonStyle" TargetType="{x:Type Button}">
         <Setter Property="Padding" Value="15, 7"/>
         <Setter Property="Background" Value="white"/>
@@ -89,6 +90,7 @@
     </Style>
 
     <!--Primary button styles-->
+    
     <Style x:Key="PrimaryButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource DefaultButtonStyle}">
         <Setter Property="Background" Value="{DynamicResource PrimaryBrush}"/>
         <Setter Property="Foreground" Value="White"/>
@@ -120,6 +122,7 @@
     </Style>
 
     <!--Danger button styles-->
+    
     <Style x:Key="DangerButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource DefaultButtonStyle}">
         <Setter Property="Background" Value="{DynamicResource DangerBrush}"/>
         <Setter Property="Foreground" Value="White"/>
@@ -152,6 +155,7 @@
 
 
     <!--Default styles-->
+    
     <Style TargetType="{x:Type Button}" BasedOn="{StaticResource DefaultButtonStyle}"/>
     <Style TargetType="{x:Type controls:IconButton}" BasedOn="{StaticResource DefaultIconButtonStyle}"/>
 
