@@ -1,0 +1,162 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:controls="clr-namespace:Wpf.UI.Controls;assembly=Wpf.UI.Controls"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--Default button triggers-->
+    
+    <Trigger x:Key="DefaultButtonMouseOverTrigger" Property="Button.IsMouseOver" Value="True">
+        <Setter Property="Button.Background" Value="{DynamicResource Gray100Brush}"/>
+        <Setter Property="Button.BorderBrush" Value="{DynamicResource Gray300Brush}"/>
+    </Trigger>
+
+    <Trigger x:Key="DefaultButtonMouseCapturedTrigger" Property="Button.IsMouseCaptured" Value="True">
+        <Setter Property="Button.Background" Value="{DynamicResource Gray200Brush}"/>
+        <Setter Property="Button.BorderBrush" Value="{DynamicResource Gray400Brush}"/>
+    </Trigger>
+
+    <Trigger x:Key="DefaultButtonIsEnabledTrigger" Property="Button.IsEnabled" Value="False">
+        <Setter Property="Button.Background" Value="{DynamicResource Gray100Brush}"/>
+        <Setter Property="Button.Foreground" Value="{DynamicResource Gray600Brush}"/>
+    </Trigger>
+
+    <!--Primary button triggers-->
+    
+    <Trigger x:Key="PrimaryButtonMouseOverTrigger" Property="Button.IsMouseOver" Value="True">
+        <Setter Property="Button.Background" Value="{DynamicResource PrimaryBrush2}"/>
+    </Trigger>
+
+    <Trigger x:Key="PrimaryButtonMouseCapturedTrigger" Property="Button.IsMouseCaptured" Value="True">
+        <Setter Property="Button.Background" Value="{DynamicResource PrimaryBrush3}"/>
+    </Trigger>
+
+    <Trigger x:Key="PrimaryButtonIsEnabledTrigger" Property="Button.IsEnabled" Value="False">
+        <Setter Property="Button.Background" Value="{DynamicResource PrimaryBrushLight}"/>
+        <Setter Property="Button.Foreground" Value="{DynamicResource Gray500Brush}"/>
+    </Trigger>
+
+    <!--Danger button triggers-->
+    
+    <Trigger x:Key="DangerButtonMouseOverTrigger" Property="Button.IsMouseOver" Value="True">
+        <Setter Property="Button.Background" Value="{DynamicResource DangerBrush2}"/>
+    </Trigger>
+
+    <Trigger x:Key="DangerButtonMouseCapturedTrigger" Property="Button.IsMouseCaptured" Value="True">
+        <Setter Property="Button.Background" Value="{DynamicResource DangerBrush3}"/>
+    </Trigger>
+
+    <Trigger x:Key="DangerButtonIsEnabledTrigger" Property="Button.IsEnabled" Value="False">
+        <Setter Property="Button.Background" Value="{DynamicResource DangerBrushLight}"/>
+        <Setter Property="Button.Foreground" Value="{DynamicResource DangerBrush3}"/>
+    </Trigger>
+
+
+    <!--Default button styles-->
+    
+    <Style x:Key="DefaultButtonStyle" TargetType="{x:Type Button}">
+        <Setter Property="Padding" Value="15, 7"/>
+        <Setter Property="Background" Value="white"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource Gray200Brush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+        <Setter Property="Template" Value="{DynamicResource DefaultButtonTemplate}"/>
+        <Style.Triggers>
+            <StaticResource ResourceKey="DefaultButtonMouseOverTrigger"/>
+            <StaticResource ResourceKey="DefaultButtonMouseCapturedTrigger"/>
+            <StaticResource ResourceKey="DefaultButtonIsEnabledTrigger"/>
+        </Style.Triggers>
+    </Style>
+
+
+    <Style x:Key="DefaultIconButtonStyle" TargetType="{x:Type controls:IconButton}">
+        <Setter Property="Padding" Value="15, 7"/>
+        <Setter Property="Background" Value="white"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource Gray200Brush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+        <Setter Property="Template" Value="{DynamicResource DefaultIconButtonTemplate}"/>
+        <Style.Triggers>
+            <StaticResource ResourceKey="DefaultButtonMouseOverTrigger"/>
+            <StaticResource ResourceKey="DefaultButtonMouseCapturedTrigger"/>
+            <StaticResource ResourceKey="DefaultButtonIsEnabledTrigger"/>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="RoundedButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource DefaultButtonStyle}">
+        <Setter Property="Template" Value="{DynamicResource DefaultRoundedButtonTemplate}"/>
+    </Style>
+
+    <Style x:Key="RoundedIconButtonStyle" TargetType="{x:Type controls:IconButton}" BasedOn="{StaticResource DefaultIconButtonStyle}">
+        <Setter Property="Template" Value="{DynamicResource DefaultRoundedIconButtonTemplate}"/>
+    </Style>
+
+    <!--Primary button styles-->
+    
+    <Style x:Key="PrimaryButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource DefaultButtonStyle}">
+        <Setter Property="Background" Value="{DynamicResource PrimaryBrush}"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Style.Triggers>
+            <StaticResource ResourceKey="PrimaryButtonMouseOverTrigger"/>
+            <StaticResource ResourceKey="PrimaryButtonMouseCapturedTrigger"/>
+            <StaticResource ResourceKey="PrimaryButtonIsEnabledTrigger"/>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="PrimaryIconButtonStyle" TargetType="{x:Type controls:IconButton}" BasedOn="{StaticResource DefaultIconButtonStyle}">
+        <Setter Property="Background" Value="{DynamicResource PrimaryBrush}"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Style.Triggers>
+            <StaticResource ResourceKey="PrimaryButtonMouseOverTrigger"/>
+            <StaticResource ResourceKey="PrimaryButtonMouseCapturedTrigger"/>
+            <StaticResource ResourceKey="PrimaryButtonIsEnabledTrigger"/>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="PrimaryRoundedButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource PrimaryButtonStyle}">
+        <Setter Property="Template" Value="{DynamicResource DefaultRoundedButtonTemplate}"/>
+    </Style>
+
+    <Style x:Key="PrimaryRoundedIconButtonStyle" TargetType="{x:Type controls:IconButton}" BasedOn="{StaticResource PrimaryIconButtonStyle}">
+        <Setter Property="Template" Value="{DynamicResource DefaultRoundedIconButtonTemplate}"/>
+    </Style>
+
+    <!--Danger button styles-->
+    
+    <Style x:Key="DangerButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource DefaultButtonStyle}">
+        <Setter Property="Background" Value="{DynamicResource DangerBrush}"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Style.Triggers>
+            <StaticResource ResourceKey="DangerButtonMouseOverTrigger"/>
+            <StaticResource ResourceKey="DangerButtonMouseCapturedTrigger"/>
+            <StaticResource ResourceKey="DangerButtonIsEnabledTrigger"/>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="DangerIconButtonStyle" TargetType="{x:Type controls:IconButton}" BasedOn="{StaticResource DefaultIconButtonStyle}">
+        <Setter Property="Background" Value="{DynamicResource DangerBrush}"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Style.Triggers>
+            <StaticResource ResourceKey="DangerButtonMouseOverTrigger"/>
+            <StaticResource ResourceKey="DangerButtonMouseCapturedTrigger"/>
+            <StaticResource ResourceKey="DangerButtonIsEnabledTrigger"/>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="DangerRoundedButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource DangerButtonStyle}">
+        <Setter Property="Template" Value="{DynamicResource DefaultRoundedButtonTemplate}"/>
+    </Style>
+
+    <Style x:Key="DangerRoundedIconButtonStyle" TargetType="{x:Type controls:IconButton}" BasedOn="{StaticResource DangerIconButtonStyle}">
+        <Setter Property="Template" Value="{DynamicResource DefaultRoundedIconButtonTemplate}"/>
+    </Style>
+
+
+    <!--Default styles-->
+    
+    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource DefaultButtonStyle}"/>
+    <Style TargetType="{x:Type controls:IconButton}" BasedOn="{StaticResource DefaultIconButtonStyle}"/>
+
+</ResourceDictionary>

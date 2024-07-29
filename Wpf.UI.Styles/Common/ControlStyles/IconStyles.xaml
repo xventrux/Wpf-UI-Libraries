@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:controls="clr-namespace:Wpf.UI.Controls;assembly=Wpf.UI.Controls"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <FontFamily x:Key="Icons">../../Resourses/Fonts/#Material Design Icons</FontFamily>
+
+    <!--Default icon styles-->
+    <Style x:Key="DefaultIconStyle" TargetType="{x:Type controls:Icon}">
+        <Setter Property="Template" Value="{DynamicResource DefaultIconTemplate}"/>
+    </Style>
+    
+    <!--Default styles-->
+    <Style TargetType="{x:Type controls:Icon}" BasedOn="{StaticResource DefaultIconStyle}"/>
+
+
+</ResourceDictionary>
